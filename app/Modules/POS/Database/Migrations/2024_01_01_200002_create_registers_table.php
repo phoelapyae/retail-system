@@ -19,16 +19,16 @@ return new class extends Migration
         });
         
         // Add register_id foreign key to pos_sales
-        Schema::table('pos_sales', function (Blueprint $table) {
-            $table->foreign('register_id')->references('id')->on('registers')->onDelete('set null');
-        });
+        // Schema::table('pos_sales', function (Blueprint $table) {
+        //     $table->foreign('register_id')->references('id')->on('registers')->onDelete('set null');
+        // });
     }
     
     public function down()
     {
-        Schema::table('pos_sales', function (Blueprint $table) {
-            $table->dropForeign(['register_id']);
-        });
+        // Schema::table('pos_sales', function (Blueprint $table) {
+        //     $table->dropForeign(['register_id']);
+        // });
         
         Schema::dropIfExists('registers');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Modules\Ecommerce\Controllers;
 
+use App\Core\Services\ModuleCommunicationHub;
 use App\Http\Controllers\Controller;
 use App\Modules\Ecommerce\Models\Product;
 use App\Modules\Ecommerce\Requests\{CreateProductRequest, UpdateProductRequest};
@@ -10,8 +11,21 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $hub;
+
+    public function __construct(
+        ModuleCommunicationHub $hub
+    )
+    {
+        $this->hub = $hub;
+    }
     public function index(Request $request)
     {
+
+        $students = $this->hub->request('loyalty', 'studentList', []);
+
+        return $students;
+
         $query = Product::query();
         
         // Search

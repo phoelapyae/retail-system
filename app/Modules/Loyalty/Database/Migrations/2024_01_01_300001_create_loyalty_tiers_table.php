@@ -19,9 +19,9 @@ return new class extends Migration
         });
         
         // Add loyalty_tier_id to customers table
-        Schema::table('customers', function (Blueprint $table) {
-            $table->foreignId('loyalty_tier_id')->nullable()->constrained()->onDelete('set null');
-        });
+        // Schema::table('customers', function (Blueprint $table) {
+        //     $table->foreignId('loyalty_tier_id')->nullable()->constrained()->onDelete('set null');
+        // });
     }
     
     public function down()

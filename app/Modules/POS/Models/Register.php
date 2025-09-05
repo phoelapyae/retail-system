@@ -2,6 +2,7 @@
 
 namespace App\Modules\POS\Models;
 
+use App\Core\Models\Customer;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

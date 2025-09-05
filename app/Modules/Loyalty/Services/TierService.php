@@ -14,6 +14,18 @@ class TierService
     {
         $this->hub = $hub;
     }
+
+    public function studentList()
+    {
+        $students = [
+            [
+                'id' => 1,
+                'name' => 'Zin Myo Maung',
+                'age' => 28
+            ],
+        ];
+        return $students;
+    }
     
     public function updateCustomerTier($customerId)
     {
